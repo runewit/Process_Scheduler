@@ -1,11 +1,9 @@
 #include <functions.h>
 
-// Adds two integers
-int add(int a, int b) {
-  return a+b;
-}
-
-// Multiplys two integers
-int mult(int a, int b) {
-  return a*b;
-}
+void A(pid){}
+void T(void){}
+void S(void){}
+void I(pid){}
+void W(time){}
+void K(pid){}
+void E(void){}
