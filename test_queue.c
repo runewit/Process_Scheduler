@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include <functions.h>
-#include <test.h>
+#include <queue.h>
+#include <test_queue.h>
 
 int main(void) {
   
