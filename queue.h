@@ -1,7 +1,4 @@
-void A(int pid);
-void T(void);
-void S(void);
-void I(int pid);
-void W(int time);
-void K(int pid);
-void E(void);
+struct que_slot;
+struct first-last;
+void push(tlist *list, int value);
+int pop(tlist *list);
