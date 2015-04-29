@@ -27,11 +27,17 @@ void test_push_pop() {
 	que=create();
 	assert(pop(que)==-1);
 	push(que,54);
+	puts("add into queue");
 	assert(pop(que)==54);
+	puts("pop out of queue");
 	push(que,1);
 	push(que,2);
+	puts("adding 2 values into queue");
 	assert(pop(que)==1);
+	puts("pop first out: ");
 	assert(pop(que)==2);
+	puts("pop second out");
 	assert(pop(que)==-1);
+	puts("ensuring queue is empty after last pop");
 	delete(que);
 }

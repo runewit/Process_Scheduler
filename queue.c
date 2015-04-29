@@ -23,9 +23,9 @@ void push(tqueue *queue, int value){
 	if(queue->last == NULL && queue->first == NULL){
 		queue->first = slot;
 		queue->last = slot;
-	}else{ //last-->first-->pops_off //after-->before
+	}else{ //last-->first-->pops_off //after-->before-->pops_off
 		slot->before = queue->last;
-		//queue->first = slot;
+		queue->last->after = slot;
 		queue->last = slot;
 	}
 	
@@ -35,23 +35,26 @@ void push(tqueue *queue, int value){
 int pop(tqueue *queue){
 	int pid;
 	
-	tqs *slot = queue->last;
-	
 	if(queue->first == NULL && queue->last == NULL){
 		printf("queue is empty\n");
 		return -1;
 	}else if(queue->first == queue->last){
-		pid=slot->program_id;
+		pid=queue->first->program_id;
 		free(queue->first);
 		queue->first = NULL;
 		queue->last = NULL;
+		printf("popped last item out\n");
 	}else{
-		pid=slot->program_id;
+		pid=queue->first->program_id;
+		printf("set pid\n");
 		queue->first = queue->first->after;
+		printf("set new first\n");
 		free(queue->first->before);
+		printf("freed old first\n");
 		queue->first->before = NULL;
+		printf("set new first's before reference to null\n");
 	}
-	return pid; //slot != NULL ? delete(queue, slot) : NULL;
+	return pid;
 }
 
 /*

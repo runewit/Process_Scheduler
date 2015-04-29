@@ -1,9 +1,13 @@
-void A();
+#include <stdio.h>
+#include <stdlib.h>
+//#include "queue.c"
+
+void A(int pid);
 void T(void);
 void S(void);
-void I();
-void W();
-void K();
+void I(int pid);
+void W(int time);
+void K(int pid);
 void E(void);
 int stop(); //stop the current running process if it exists, return it's pid
 void ready(int pid); //push pid to ready queue
