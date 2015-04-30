@@ -1,3 +1,6 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
 typedef struct que_slot{
 	struct que_slot *before;
 	int program_id;
@@ -14,3 +17,5 @@ void delete(tqueue* q);
 tqueue* create();
 void push(tqueue *queue, int value);
 int pop(tqueue *queue);
+
+#endif

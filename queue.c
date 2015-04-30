@@ -1,6 +1,6 @@
-#include "queue.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "queue.h"
 
 tqueue* create(){
 	tqueue*q=calloc(1, sizeof(tqueue));

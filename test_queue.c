@@ -1,12 +1,21 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "queue.h"
+//#include "queue.h"
 #include "test_queue.h"
+#include "scheduler.h"
+
+void test_scheduler() {
+	tqueue* queue,waiting;
+	decode("A", queue, &waiting);
+	assert(pop(queue)==0);
+	delete(queue);
+}
 
 int main(void) {
 	test_create();
 	test_push_pop();
+	test_scheduler();
 	puts("testing complete");
 	return 0;
 }
@@ -29,7 +38,6 @@ void test_push_pop() {
 	push(que,54);
 	puts("add into queue");
 	assert(pop(que)==54);
-	puts("pop out of queue");
 	push(que,1);
 	push(que,2);
 	puts("adding 2 values into queue");
@@ -41,3 +49,5 @@ void test_push_pop() {
 	puts("ensuring queue is empty after last pop");
 	delete(que);
 }
+
+
